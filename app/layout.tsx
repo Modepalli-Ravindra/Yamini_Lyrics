@@ -22,8 +22,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
       <body className="bg-obsidian text-gold-champagne min-h-screen flex flex-col selection:bg-gold-radiant/30 selection:text-gold-radiant">
-        {/* Subtle Ambient Golden Glow at top */}
-        <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-gradient-to-b from-gold-radiant/10 via-gold-antique/5 to-transparent blur-[120px] pointer-events-none z-0" />
+        {/* Ambient Celestial Golden Glow across top header & canvas */}
+        <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[450px] bg-gradient-to-b from-gold-radiant/20 via-gold-antique/10 to-transparent blur-[140px] pointer-events-none z-0" />
 
         <LanguageProvider>
           <Navbar />

@@ -19,124 +19,146 @@ export default function HomeClientView({ categories, songs }: HomeClientViewProp
   return (
     <div className="space-y-12 sm:space-y-20">
       
-      {/* Hero Section: Full-Width Celestial Background & Borderless Radiant Emblem */}
-      <section className="relative pt-8 sm:pt-16 pb-12 sm:pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+      {/* Full-Bleed Edge-to-Edge Hero Section with Rich Golden Illumination Across the Entire Canvas */}
+      <section className="relative w-full overflow-hidden border-b border-gold-antique/20 pt-8 sm:pt-16 pb-14 sm:pb-22">
         
-        {/* Full Hero Section Celestial Background - Covers Entire Hero Section Seamlessly */}
+        {/* Full-Canvas Golden Illumination & Celestial Atmosphere (Spans 100% of Screen Width) */}
         <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-          {/* Broad Golden Atmosphere Glowing Across the Entire Hero Canvas */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_80%_at_50%_0%,rgba(245,158,11,0.22),transparent_75%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_80%_50%,rgba(212,175,55,0.18),transparent_60%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_20%_50%,rgba(245,158,11,0.12),transparent_60%)]" />
+          {/* 1. Grand Celestial Radiant Gold Bloom across the entire width */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_140%_100%_at_50%_-10%,rgba(245,158,11,0.32),rgba(212,175,55,0.18)_45%,rgba(7,9,14,0.6)_85%)]" />
 
-          {/* Smooth Ambient Gradient to Obsidian Bottom */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-obsidian/30 to-obsidian" />
+          {/* 2. Full Horizontal Golden Light Sweep spanning left to right */}
+          <div className="absolute inset-0 bg-gradient-to-r from-amber-500/18 via-yellow-500/22 to-amber-500/20 mix-blend-screen opacity-90" />
+
+          {/* 3. Left Golden Aura - Bathes Title, Sacred Badges & Search in Divine Warmth */}
+          <div className="absolute -top-20 left-0 w-[550px] sm:w-[700px] h-[550px] bg-gradient-to-br from-amber-500/35 via-yellow-500/22 to-transparent rounded-full blur-[110px]" />
+
+          {/* 4. Right Golden Aura - Bathes the Sacred Emblem & CTA Area */}
+          <div className="absolute -top-16 right-0 w-[550px] sm:w-[750px] h-[600px] bg-gradient-to-bl from-amber-500/35 via-yellow-500/25 to-transparent rounded-full blur-[120px]" />
+
+          {/* 5. Center Overhead Golden Light Beam connecting left and right */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] max-w-full h-[400px] bg-gradient-to-b from-[#f59e0b]/30 via-[#d4af37]/20 to-transparent rounded-full blur-[100px]" />
+
+          {/* 6. Sacred Golden Micro-Pattern for Divine Texture */}
+          <div 
+            className="absolute inset-0 opacity-[0.06]" 
+            style={{
+              backgroundImage: 'radial-gradient(rgba(245,158,11,0.7) 1px, transparent 1px)',
+              backgroundSize: '28px 28px'
+            }}
+          />
+
+          {/* 7. Gentle Golden Ambient Bottom Flow fading into Obsidian */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-obsidian/90" />
         </div>
 
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-14 items-center">
-          
-          {/* Left Column: Regal Typography, Value Badges & Search */}
-          <div className="lg:col-span-7 text-left space-y-4 sm:space-y-6">
+        {/* Constrained Centered Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-14 items-center">
             
-            {/* Sacred Vedic Tag & Gold Pill */}
-            <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-gold-radiant/20 via-gold-antique/15 to-gold-radiant/10 border border-gold-radiant/50 text-gold-radiant text-[11px] sm:text-xs font-semibold tracking-wider uppercase shadow-[0_0_15px_rgba(245,158,11,0.25)]">
-                <Sparkles className="w-3.5 h-3.5 text-gold-radiant animate-pulse" />
-                <span>{t('hero.badge')}</span>
-              </div>
-              <span className="text-[10px] sm:text-xs font-serif text-gold-champagne/70 tracking-widest uppercase hidden sm:inline">
-                ॥ ॐ శ్రీ గురుభ్యో నమః ॥
-              </span>
-            </div>
-
-            {/* Regal Heading - Cinematic Hierarchy */}
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15] font-cinzel">
-              {t('hero.titlePart1')}{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-radiant via-[#fde047] to-gold-antique drop-shadow-[0_2px_12px_rgba(245,158,11,0.35)]">
-                {t('hero.titleHighlight')}
-              </span>{' '}
-              <span className="block sm:inline">{t('hero.titlePart2')}</span>
-            </h1>
-
-            <p className="text-xs sm:text-sm text-gold-champagne/85 font-sans leading-relaxed max-w-xl">
-              {t('hero.subtitle')}
-            </p>
-
-            {/* Sacred Quick Highlights Strip */}
-            <div className="flex flex-wrap items-center gap-2 sm:gap-3 pt-1 text-xs">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-obsidian-secondary/90 border border-gold-antique/30 text-gold-champagne/90 text-[11px] sm:text-xs font-medium backdrop-blur-sm">
-                <Flame className="w-3.5 h-3.5 text-gold-radiant" />
-                <span>{categories.length} Holy Deities</span>
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-obsidian-secondary/90 border border-gold-antique/30 text-gold-champagne/90 text-[11px] sm:text-xs font-medium backdrop-blur-sm">
-                <Scroll className="w-3.5 h-3.5 text-gold-radiant" />
-                <span>Telugu & Roman Chanting</span>
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-obsidian-secondary/90 border border-gold-antique/30 text-gold-champagne/90 text-[11px] sm:text-xs font-medium backdrop-blur-sm">
-                <FileDown className="w-3.5 h-3.5 text-gold-radiant" />
-                <span>1-Click Sacred A4 PDFs</span>
-              </span>
-            </div>
-
-            {/* Live Instant Search Bar */}
-            <div className="pt-2">
-              <div className="p-1 sm:p-1.5 rounded-2xl bg-gradient-to-r from-gold-radiant/25 via-gold-antique/15 to-transparent border border-gold-radiant/40 shadow-[0_0_25px_rgba(245,158,11,0.15)] backdrop-blur-md">
-                <HomeSearch initialSongs={songs} />
-              </div>
-            </div>
-
-            {/* Quick Deity Filter Pills - Horizontal Scroll on Mobile */}
-            <div className="pt-1">
-              <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar pb-1 text-xs">
-                <span className="text-gold-champagne/70 font-semibold uppercase tracking-wider shrink-0 text-[11px]">
-                  {t('hero.popular')}
-                </span>
-                {categories.slice(0, 6).map((c) => (
-                  <Link
-                    key={c.id}
-                    href={`/category/${c.slug}`}
-                    className="shrink-0 px-2.5 sm:px-3 py-1 rounded-full bg-obsidian-secondary/90 border border-obsidian-border hover:border-gold-radiant/60 hover:text-white transition-all duration-200 text-[11px] sm:text-xs font-medium text-gold-champagne/85 hover:shadow-gold-sm"
-                  >
-                    <span>{language === 'te' ? (c.name_telugu || c.name_english) : c.name_english}</span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column: Borderless Luminous Sacred Emblem Logo */}
-          <div className="lg:col-span-5 flex justify-center items-center pt-6 lg:pt-0">
-            <div className="relative group w-full max-w-xs sm:max-w-md flex flex-col items-center">
+            {/* Left Column: Regal Typography, Value Badges & Search */}
+            <div className="lg:col-span-7 text-left space-y-4 sm:space-y-6">
               
-              {/* Soft Golden Halo Centered Directly Behind the Logo Emblem */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 sm:w-84 sm:h-84 bg-gradient-to-tr from-gold-radiant/35 via-gold-antique/20 to-transparent rounded-full blur-3xl opacity-80 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-
-              {/* Pure Sacred Emblem - ZERO BORDER (No Outer Ring, No Frame) */}
-              <div className="relative z-10 w-52 h-52 sm:w-68 sm:h-68 lg:w-76 lg:h-76 flex items-center justify-center">
-                <img
-                  src="/assets/logo.png"
-                  alt="Yamini Lyrics Sacred Emblem"
-                  className="w-full h-full object-contain filter drop-shadow-[0_0_30px_rgba(245,158,11,0.65)] hover:drop-shadow-[0_0_45px_rgba(245,158,11,0.9)] hover:scale-105 transition-all duration-500 select-none"
-                />
-              </div>
-
-              {/* Sacred Call-To-Action Button Directly Below Emblem */}
-              <div className="relative z-10 pt-4 flex flex-col items-center space-y-2 text-center">
-                <Link
-                  href="/#categories"
-                  className="inline-flex items-center gap-2 px-7 py-2.5 rounded-full bg-gradient-to-r from-gold-radiant via-[#fbbf24] to-gold-antique text-obsidian text-xs sm:text-sm font-extrabold hover:brightness-110 transition-all shadow-[0_0_20px_rgba(245,158,11,0.4)] hover:shadow-[0_0_30px_rgba(245,158,11,0.7)] hover:scale-105"
-                >
-                  <Sparkles className="w-4 h-4 text-obsidian" />
-                  <span>{t('hero.featuredBtn')}</span>
-                </Link>
-                <span className="text-[11px] text-gold-champagne/70 font-sans tracking-wide">
-                  {categories.length} Holy Deities • Sacred A4 Temple PDFs
+              {/* Sacred Vedic Tag & Gold Pill */}
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-gold-radiant/25 via-gold-antique/20 to-gold-radiant/15 border border-gold-radiant/60 text-gold-radiant text-[11px] sm:text-xs font-semibold tracking-wider uppercase shadow-[0_0_20px_rgba(245,158,11,0.35)] backdrop-blur-md">
+                  <Sparkles className="w-3.5 h-3.5 text-gold-radiant animate-pulse" />
+                  <span>{t('hero.badge')}</span>
+                </div>
+                <span className="text-[10px] sm:text-xs font-serif text-gold-champagne/80 tracking-widest uppercase hidden sm:inline">
+                  ॥ ॐ శ్రీ గురుభ్యో నమః ॥
                 </span>
               </div>
 
-            </div>
-          </div>
+              {/* Regal Heading - Cinematic Hierarchy */}
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15] font-cinzel">
+                {t('hero.titlePart1')}{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-radiant via-[#fde047] to-gold-antique drop-shadow-[0_2px_14px_rgba(245,158,11,0.45)]">
+                  {t('hero.titleHighlight')}
+                </span>{' '}
+                <span className="block sm:inline">{t('hero.titlePart2')}</span>
+              </h1>
 
+              <p className="text-xs sm:text-sm text-gold-champagne/90 font-sans leading-relaxed max-w-xl">
+                {t('hero.subtitle')}
+              </p>
+
+              {/* Sacred Quick Highlights Strip */}
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3 pt-1 text-xs">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-obsidian-secondary/90 border border-gold-antique/40 text-gold-champagne text-[11px] sm:text-xs font-medium backdrop-blur-md shadow-sm">
+                  <Flame className="w-3.5 h-3.5 text-gold-radiant" />
+                  <span>{categories.length} Holy Deities</span>
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-obsidian-secondary/90 border border-gold-antique/40 text-gold-champagne text-[11px] sm:text-xs font-medium backdrop-blur-md shadow-sm">
+                  <Scroll className="w-3.5 h-3.5 text-gold-radiant" />
+                  <span>Telugu & Roman Chanting</span>
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-obsidian-secondary/90 border border-gold-antique/40 text-gold-champagne text-[11px] sm:text-xs font-medium backdrop-blur-md shadow-sm">
+                  <FileDown className="w-3.5 h-3.5 text-gold-radiant" />
+                  <span>1-Click Sacred A4 PDFs</span>
+                </span>
+              </div>
+
+              {/* Live Instant Search Bar */}
+              <div className="pt-2">
+                <div className="p-1 sm:p-1.5 rounded-2xl bg-gradient-to-r from-gold-radiant/30 via-gold-antique/20 to-gold-radiant/10 border border-gold-radiant/50 shadow-[0_0_30px_rgba(245,158,11,0.22)] backdrop-blur-md">
+                  <HomeSearch initialSongs={songs} />
+                </div>
+              </div>
+
+              {/* Quick Deity Filter Pills - Horizontal Scroll on Mobile */}
+              <div className="pt-1">
+                <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar pb-1 text-xs">
+                  <span className="text-gold-champagne/80 font-semibold uppercase tracking-wider shrink-0 text-[11px]">
+                    {t('hero.popular')}
+                  </span>
+                  {categories.slice(0, 6).map((c) => (
+                    <Link
+                      key={c.id}
+                      href={`/category/${c.slug}`}
+                      className="shrink-0 px-2.5 sm:px-3 py-1 rounded-full bg-obsidian-secondary/90 border border-obsidian-border hover:border-gold-radiant/70 hover:text-white transition-all duration-200 text-[11px] sm:text-xs font-medium text-gold-champagne hover:shadow-gold-sm"
+                    >
+                      <span>{language === 'te' ? (c.name_telugu || c.name_english) : c.name_english}</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Borderless Luminous Sacred Emblem Logo */}
+            <div className="lg:col-span-5 flex justify-center items-center pt-6 lg:pt-0">
+              <div className="relative group w-full max-w-xs sm:max-w-md flex flex-col items-center">
+                
+                {/* Wide Diffuse Golden Glow seamlessly blending with hero illumination (NO tight circle) */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 sm:w-[420px] sm:h-[420px] bg-gradient-to-tr from-gold-radiant/30 via-gold-antique/20 to-transparent rounded-full blur-[90px] opacity-90 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+
+                {/* Pure Sacred Emblem - ZERO BORDER (No Outer Ring, No Frame) */}
+                <div className="relative z-10 w-52 h-52 sm:w-68 sm:h-68 lg:w-80 lg:h-80 flex items-center justify-center">
+                  <img
+                    src="/assets/logo.png"
+                    alt="Yamini Lyrics Sacred Emblem"
+                    className="w-full h-full object-contain filter drop-shadow-[0_0_35px_rgba(245,158,11,0.7)] hover:drop-shadow-[0_0_50px_rgba(245,158,11,0.95)] hover:scale-105 transition-all duration-500 select-none"
+                  />
+                </div>
+
+                {/* Sacred Call-To-Action Button Directly Below Emblem */}
+                <div className="relative z-10 pt-4 flex flex-col items-center space-y-2 text-center">
+                  <Link
+                    href="/#categories"
+                    className="inline-flex items-center gap-2 px-7 py-2.5 rounded-full bg-gradient-to-r from-gold-radiant via-[#fbbf24] to-gold-antique text-obsidian text-xs sm:text-sm font-extrabold hover:brightness-110 transition-all shadow-[0_0_25px_rgba(245,158,11,0.5)] hover:shadow-[0_0_35px_rgba(245,158,11,0.8)] hover:scale-105"
+                  >
+                    <Sparkles className="w-4 h-4 text-obsidian" />
+                    <span>{t('hero.featuredBtn')}</span>
+                  </Link>
+                  <span className="text-[11px] text-gold-champagne/80 font-sans tracking-wide">
+                    {categories.length} Holy Deities • Sacred A4 Temple PDFs
+                  </span>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 
