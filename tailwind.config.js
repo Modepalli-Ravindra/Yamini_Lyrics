@@ -57,8 +57,15 @@ module.exports = {
         'fade-in': "fadeIn 0.5s ease-out forwards",
         'slide-up': "slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards",
         'spin-slow': "spin 20s linear infinite",
+        'spin-slower': "spin 60s linear infinite",
+        'spin-reverse': "spinReverse 40s linear infinite",
+        'pulse-slow': "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
       keyframes: {
+        spinReverse: {
+          '0%': { transform: 'rotate(360deg)' },
+          '100%': { transform: 'rotate(0deg)' },
+        },
         glow: {
           '0%': { boxShadow: '0 0 12px rgba(212, 175, 55, 0.25)' },
           '100%': { boxShadow: '0 0 32px rgba(245, 158, 11, 0.5)' },
