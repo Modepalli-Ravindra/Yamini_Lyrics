@@ -17,21 +17,21 @@ export default function HomeClientView({ categories, songs }: HomeClientViewProp
   const { language, t } = useLanguage();
 
   return (
-    <div className="space-y-12 sm:space-y-20">
+    <div className="w-full">
       
-      {/* Full-Bleed Edge-to-Edge Hero Section with Rich Golden Illumination Across the Entire Canvas */}
-      <section className="relative w-full overflow-hidden border-b border-gold-antique/20 pt-8 sm:pt-16 pb-14 sm:pb-22">
+      {/* Full-Bleed Edge-to-Edge Hero Section with Pure Celestial Golden Illumination */}
+      <section className="relative w-full overflow-hidden border-b border-gold-radiant/30 pt-8 sm:pt-14 pb-10 sm:pb-14 shadow-[0_4px_30px_rgba(245,158,11,0.12)]">
         
-        {/* Full-Canvas Golden Illumination & Celestial Atmosphere (Spans 100% of Screen Width) */}
+        {/* Full-Canvas Golden Illumination (Spans 100% of Screen Width, Zero Disturbance) */}
         <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-          {/* 1. Grand Celestial Radiant Gold Bloom across the entire width */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_140%_100%_at_50%_-10%,rgba(245,158,11,0.32),rgba(212,175,55,0.18)_45%,rgba(7,9,14,0.6)_85%)]" />
+          {/* 1. Grand Celestial Radiant Gold Bloom across the entire canvas */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_140%_100%_at_50%_-10%,rgba(245,158,11,0.32),rgba(212,175,55,0.18)_45%,rgba(7,9,14,0.4)_90%)]" />
 
           {/* 2. Full Horizontal Golden Light Sweep spanning left to right */}
           <div className="absolute inset-0 bg-gradient-to-r from-amber-500/18 via-yellow-500/22 to-amber-500/20 mix-blend-screen opacity-90" />
 
-          {/* 3. Left Golden Aura - Bathes Title, Sacred Badges & Search in Divine Warmth */}
-          <div className="absolute -top-20 left-0 w-[550px] sm:w-[700px] h-[550px] bg-gradient-to-br from-amber-500/35 via-yellow-500/22 to-transparent rounded-full blur-[110px]" />
+          {/* 3. Left Golden Aura - Bathes Title & Search in Divine Warmth */}
+          <div className="absolute -top-20 left-0 w-[550px] sm:w-[700px] h-[550px] bg-gradient-to-br from-amber-500/35 via-yellow-500/20 to-transparent rounded-full blur-[110px]" />
 
           {/* 4. Right Golden Aura - Bathes the Sacred Emblem & CTA Area */}
           <div className="absolute -top-16 right-0 w-[550px] sm:w-[750px] h-[600px] bg-gradient-to-bl from-amber-500/35 via-yellow-500/25 to-transparent rounded-full blur-[120px]" />
@@ -39,17 +39,8 @@ export default function HomeClientView({ categories, songs }: HomeClientViewProp
           {/* 5. Center Overhead Golden Light Beam connecting left and right */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] max-w-full h-[400px] bg-gradient-to-b from-[#f59e0b]/30 via-[#d4af37]/20 to-transparent rounded-full blur-[100px]" />
 
-          {/* 6. Sacred Golden Micro-Pattern for Divine Texture */}
-          <div 
-            className="absolute inset-0 opacity-[0.06]" 
-            style={{
-              backgroundImage: 'radial-gradient(rgba(245,158,11,0.7) 1px, transparent 1px)',
-              backgroundSize: '28px 28px'
-            }}
-          />
-
-          {/* 7. Gentle Golden Ambient Bottom Flow fading into Obsidian */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-obsidian/90" />
+          {/* 6. Pure Golden Base Illumination flowing cleanly to the bottom border line */}
+          <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-b from-transparent to-obsidian/50" />
         </div>
 
         {/* Constrained Centered Content */}
@@ -58,17 +49,6 @@ export default function HomeClientView({ categories, songs }: HomeClientViewProp
             
             {/* Left Column: Regal Typography, Value Badges & Search */}
             <div className="lg:col-span-7 text-left space-y-4 sm:space-y-6">
-              
-              {/* Sacred Vedic Tag & Gold Pill */}
-              <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-gold-radiant/25 via-gold-antique/20 to-gold-radiant/15 border border-gold-radiant/60 text-gold-radiant text-[11px] sm:text-xs font-semibold tracking-wider uppercase shadow-[0_0_20px_rgba(245,158,11,0.35)] backdrop-blur-md">
-                  <Sparkles className="w-3.5 h-3.5 text-gold-radiant animate-pulse" />
-                  <span>{t('hero.badge')}</span>
-                </div>
-                <span className="text-[10px] sm:text-xs font-serif text-gold-champagne/80 tracking-widest uppercase hidden sm:inline">
-                  ॥ ॐ శ్రీ గురుభ్యో నమః ॥
-                </span>
-              </div>
 
               {/* Regal Heading - Cinematic Hierarchy */}
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15] font-cinzel">
@@ -106,22 +86,20 @@ export default function HomeClientView({ categories, songs }: HomeClientViewProp
                 </div>
               </div>
 
-              {/* Quick Deity Filter Pills - Horizontal Scroll on Mobile */}
-              <div className="pt-1">
-                <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar pb-1 text-xs">
-                  <span className="text-gold-champagne/80 font-semibold uppercase tracking-wider shrink-0 text-[11px]">
-                    {t('hero.popular')}
-                  </span>
-                  {categories.slice(0, 6).map((c) => (
-                    <Link
-                      key={c.id}
-                      href={`/category/${c.slug}`}
-                      className="shrink-0 px-2.5 sm:px-3 py-1 rounded-full bg-obsidian-secondary/90 border border-obsidian-border hover:border-gold-radiant/70 hover:text-white transition-all duration-200 text-[11px] sm:text-xs font-medium text-gold-champagne hover:shadow-gold-sm"
-                    >
-                      <span>{language === 'te' ? (c.name_telugu || c.name_english) : c.name_english}</span>
-                    </Link>
-                  ))}
-                </div>
+              {/* Quick Deity Filter Pills - Clean Flex Wrap (NO SLIDING, NO SCROLLBAR) */}
+              <div className="pt-2 flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs">
+                <span className="text-gold-champagne/80 font-semibold uppercase tracking-wider shrink-0 text-[11px] mr-1">
+                  {t('hero.popular')}
+                </span>
+                {categories.slice(0, 6).map((c) => (
+                  <Link
+                    key={c.id}
+                    href={`/category/${c.slug}`}
+                    className="px-2.5 sm:px-3 py-1 rounded-full bg-obsidian-secondary/90 border border-obsidian-border hover:border-gold-radiant/70 hover:text-white transition-all duration-200 text-[11px] sm:text-xs font-medium text-gold-champagne hover:shadow-gold-sm"
+                  >
+                    <span>{language === 'te' ? (c.name_telugu || c.name_english) : c.name_english}</span>
+                  </Link>
+                ))}
               </div>
             </div>
 
@@ -163,7 +141,7 @@ export default function HomeClientView({ categories, songs }: HomeClientViewProp
       </section>
 
       {/* Deity Collections Grid - 2 COLUMNS ON MOBILE for Great UX */}
-      <section id="categories" className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 scroll-mt-20">
+      <section id="categories" className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pt-10 sm:pt-14 scroll-mt-20">
         <div className="flex items-end justify-between mb-6 pb-3 border-b border-obsidian-border">
           <div>
             <span className="text-[11px] sm:text-xs font-bold text-gold-radiant uppercase tracking-wider block mb-0.5 font-cinzel">
@@ -187,7 +165,7 @@ export default function HomeClientView({ categories, songs }: HomeClientViewProp
       </section>
 
       {/* Trending & Popular Sacred Songs */}
-      <section id="trending" className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 scroll-mt-20">
+      <section id="trending" className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pt-12 sm:pt-16 scroll-mt-20">
         <div className="flex items-end justify-between mb-6 pb-3 border-b border-obsidian-border">
           <div>
             <span className="text-[11px] sm:text-xs font-bold text-gold-radiant uppercase tracking-wider block mb-0.5 font-cinzel">
