@@ -15,13 +15,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14 sm:h-20">
           
-          {/* Logo & Luxury Brand Identity - True Circular Sacred Emblem */}
+          {/* Logo & Luxury Brand Identity - Borderless Sacred Emblem */}
           <Link href="/" className="flex items-center gap-2.5 sm:gap-3.5 group shrink-0">
-            <div className="relative flex items-center justify-center w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-gradient-to-tr from-gold-radiant/30 via-gold-antique/15 to-gold-radiant/40 border-2 border-gold-radiant/70 group-hover:border-gold-radiant transition-all duration-300 shadow-[0_0_12px_rgba(245,158,11,0.35)] group-hover:shadow-[0_0_20px_rgba(245,158,11,0.6)] overflow-hidden p-0.5">
+            <div className="relative flex items-center justify-center w-9 h-9 sm:w-11 sm:h-11 rounded-full group-hover:scale-105 transition-transform duration-300">
               <img
                 src="/assets/logo.png"
                 alt="Yamini Lyrics Sacred Emblem"
-                className="w-full h-full object-contain rounded-full group-hover:scale-110 transition-transform duration-300 filter drop-shadow-[0_0_6px_rgba(245,158,11,0.5)]"
+                className="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(245,158,11,0.5)] group-hover:drop-shadow-[0_0_12px_rgba(245,158,11,0.8)] transition-all duration-300"
               />
             </div>
             

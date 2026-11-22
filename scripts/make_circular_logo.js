@@ -3,54 +3,71 @@ const path = require('path');
 const fs = require('fs');
 
 async function processLogo() {
-  const inputPath = path.join(__dirname, '../public/assets/logo.png');
-  const fileBuffer = fs.readFileSync(inputPath);
-  const metadata = await sharp(fileBuffer).metadata();
-  const width = metadata.width || 1024;
-  const height = metadata.height || 1024;
+  const artifactPath = 'C:/Users/user/.gemini/antigravity/brain/10583221-31c4-4aae-be97-ebf3217c3d15/yamini_lyrics_sacred_emblem_1795364220926.jpg';
+  const fileBuffer = fs.readFileSync(artifactPath);
   
-  // Radius for circular cutout - slightly inside to avoid any outer square edge artifacts
-  const radius = Math.floor(Math.min(width, height) / 2) - 10;
-  const cx = Math.floor(width / 2);
-  const cy = Math.floor(height / 2);
+  const width = 1024;
+  const height = 1024;
+  const cx = 512;
+  const cy = 512;
+  // Exact radius of the golden carved medallion (starts at r = 395)
+  const radius = 394;
 
-  // SVG mask with smooth antialiased circle
-  const circleSvg = `
-    <svg width="${width}" height="${height}">
-      <defs>
-        <radialGradient id="edgeFeather" cx="50%" cy="50%" r="50%">
-          <stop offset="97%" stop-color="white" stop-opacity="1" />
-          <stop offset="100%" stop-color="white" stop-opacity="0" />
-        </radialGradient>
-      </defs>
-      <circle cx="${cx}" cy="${cy}" r="${radius}" fill="url(#edgeFeather)" />
-    </svg>
-  `;
+  // Build exact alpha mask buffer
+  const alphaChannel = Buffer.alloc(width * height);
+  for (let y = 0; y < height; y++) {
+    for (let x = 0; x < width; x++) {
+      const dist = Math.hypot(x - cx, y - cy);
+      let alpha = 0;
+      if (dist <= radius) {
+        alpha = 255;
+      } else if (dist <= radius + 2) {
+        alpha = Math.round(255 * (radius + 2 - dist) / 2);
+      }
+      alphaChannel[y * width + x] = alpha;
+    }
+  }
 
-  // Apply circular mask with destination-in blend mode
-  const circularBuffer = await sharp(fileBuffer)
+  // Create 1024x1024 1-channel alpha image
+  const alphaMask = await sharp(alphaChannel, {
+    raw: { width, height, channels: 1 }
+  }).png().toBuffer();
+
+  // Crop bounding box
+  const cropSize = (radius + 2) * 2; // ~792px
+  const cropLeft = cx - radius - 2;
+  const cropTop = cy - radius - 2;
+
+  // Mask the image and extract the bounding box
+  const croppedMedallion = await sharp(fileBuffer)
     .composite([{
-      input: Buffer.from(circleSvg),
+      input: alphaMask,
       blend: 'dest-in'
     }])
+    .extract({
+      left: cropLeft,
+      top: cropTop,
+      width: cropSize,
+      height: cropSize
+    })
     .png()
     .toBuffer();
 
-  // Save back as public/assets/logo.png
-  fs.writeFileSync(inputPath, circularBuffer);
-  fs.writeFileSync(path.join(__dirname, '../public/assets/logo_circular.png'), circularBuffer);
+  const outputPath = path.join(__dirname, '../public/assets/logo.png');
+  fs.writeFileSync(outputPath, croppedMedallion);
+  fs.writeFileSync(path.join(__dirname, '../public/assets/logo_circular.png'), croppedMedallion);
 
-  // Also update in Yamini_Lyrics on Desktop
+  // Sync to desktop Yamini_Lyrics
   const desktopYaminiLogo = 'C:/Users/user/OneDrive/Desktop/Yamini_Lyrics/public/assets/logo.png';
   try {
-    fs.writeFileSync(desktopYaminiLogo, circularBuffer);
+    fs.writeFileSync(desktopYaminiLogo, croppedMedallion);
     console.log('Updated Yamini_Lyrics desktop logo');
   } catch (err) {
-    console.log('Desktop Yamini_Lyrics update skipped or failed:', err.message);
+    console.log('Desktop Yamini_Lyrics sync error:', err.message);
   }
 
-  const resultMeta = await sharp(circularBuffer).metadata();
-  console.log('Logo successfully converted to transparent circular PNG:', {
+  const resultMeta = await sharp(croppedMedallion).metadata();
+  console.log('SUCCESS: Pure borderless circular medallion created:', {
     format: resultMeta.format,
     hasAlpha: resultMeta.hasAlpha,
     width: resultMeta.width,

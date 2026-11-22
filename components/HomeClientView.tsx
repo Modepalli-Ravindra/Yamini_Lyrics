@@ -19,40 +19,17 @@ export default function HomeClientView({ categories, songs }: HomeClientViewProp
   return (
     <div className="space-y-12 sm:space-y-20">
       
-      {/* Hero Section: Highly Attractive Celestial Vault with Sacred Golden Circular Emblem */}
-      <section className="relative pt-6 sm:pt-16 pb-12 sm:pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+      {/* Hero Section: Full-Width Celestial Background & Borderless Radiant Emblem */}
+      <section className="relative pt-8 sm:pt-16 pb-12 sm:pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
         
-        {/* Pure Celestial Obsidian & Golden Nebula Background */}
+        {/* Full Hero Section Celestial Background - Covers Entire Hero Section Seamlessly */}
         <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-          {/* Radiant Golden Glow Nebulas */}
-          <div className="absolute -top-20 right-1/4 w-[650px] h-[500px] bg-gradient-to-br from-gold-radiant/25 via-gold-antique/15 to-transparent rounded-full blur-[160px] pointer-events-none" />
-          <div className="absolute -bottom-16 left-1/4 w-[550px] h-[400px] bg-gold-radiant/15 rounded-full blur-[140px] pointer-events-none" />
-          
-          {/* Celestial Rotating Sacred Prabhavali Geometry */}
-          <div className="absolute top-1/2 -translate-y-1/2 right-10 lg:right-28 w-[420px] sm:w-[540px] h-[420px] sm:h-[540px] opacity-25 pointer-events-none animate-[spin_100s_linear_infinite]">
-            <svg viewBox="0 0 400 400" className="w-full h-full text-gold-radiant stroke-current fill-none">
-              <circle cx="200" cy="200" r="195" strokeWidth="1" strokeDasharray="4 6" opacity="0.6" />
-              <circle cx="200" cy="200" r="175" strokeWidth="1" opacity="0.5" />
-              <circle cx="200" cy="200" r="150" strokeWidth="1.5" strokeDasharray="8 8" opacity="0.7" />
-              <circle cx="200" cy="200" r="120" strokeWidth="1" opacity="0.4" />
-              <circle cx="200" cy="200" r="90" strokeWidth="1.5" strokeDasharray="3 5" opacity="0.6" />
-              {/* Sacred Rays */}
-              {[...Array(16)].map((_, i) => (
-                <line
-                  key={i}
-                  x1="200"
-                  y1="10"
-                  x2="200"
-                  y2="30"
-                  transform={`rotate(${i * 22.5} 200 200)`}
-                  strokeWidth="2"
-                  opacity="0.8"
-                />
-              ))}
-            </svg>
-          </div>
+          {/* Broad Golden Atmosphere Glowing Across the Entire Hero Canvas */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_80%_at_50%_0%,rgba(245,158,11,0.22),transparent_75%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_80%_50%,rgba(212,175,55,0.18),transparent_60%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_20%_50%,rgba(245,158,11,0.12),transparent_60%)]" />
 
-          {/* Subtle Ambient Vignette */}
+          {/* Smooth Ambient Gradient to Obsidian Bottom */}
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-obsidian/30 to-obsidian" />
         </div>
 
@@ -127,63 +104,34 @@ export default function HomeClientView({ categories, songs }: HomeClientViewProp
             </div>
           </div>
 
-          {/* Right Column: Luminous Sacred Circular Emblem (NO Square Edges) */}
-          <div className="lg:col-span-5 flex justify-center pt-4 lg:pt-0">
+          {/* Right Column: Borderless Luminous Sacred Emblem Logo */}
+          <div className="lg:col-span-5 flex justify-center items-center pt-6 lg:pt-0">
             <div className="relative group w-full max-w-xs sm:max-w-md flex flex-col items-center">
               
-              {/* Multi-Layer Divine Golden Sunburst Halos */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-gold-radiant/45 via-gold-antique/25 to-gold-radiant/40 blur-3xl opacity-80 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-              <div className="absolute -inset-4 rounded-full bg-gold-radiant/20 blur-2xl animate-pulse-slow pointer-events-none" />
+              {/* Soft Golden Halo Centered Directly Behind the Logo Emblem */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 sm:w-84 sm:h-84 bg-gradient-to-tr from-gold-radiant/35 via-gold-antique/20 to-transparent rounded-full blur-3xl opacity-80 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
-              {/* Luminous Brand Emblem Presentation */}
-              <div className="relative z-10 flex flex-col items-center text-center space-y-4 sm:space-y-5">
-                
-                {/* Grand Golden Circular Medallion */}
-                <div className="relative w-52 h-52 sm:w-68 sm:h-68 rounded-full p-2.5 bg-gradient-to-tr from-gold-radiant via-[#fef08a] to-gold-antique shadow-[0_0_40px_rgba(245,158,11,0.55)] group-hover:shadow-[0_0_60px_rgba(245,158,11,0.8)] group-hover:scale-105 transition-all duration-500">
-                  
-                  {/* Concentric Gold Ring */}
-                  <div className="w-full h-full rounded-full p-1 bg-obsidian border-2 border-gold-antique/60 relative flex items-center justify-center overflow-hidden">
-                    
-                    {/* Subtle Pulsing Sacred Backdrop */}
-                    <div className="absolute inset-0 bg-radial-gradient from-gold-radiant/20 to-transparent opacity-60" />
-                    
-                    {/* Truly Circular Transparent Emblem */}
-                    <img
-                      src="/assets/logo.png"
-                      alt="Yamini Lyrics Sacred Circular Emblem"
-                      className="w-full h-full object-contain rounded-full filter drop-shadow-[0_0_20px_rgba(245,158,11,0.65)] transform group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
+              {/* Pure Sacred Emblem - ZERO BORDER (No Outer Ring, No Frame) */}
+              <div className="relative z-10 w-52 h-52 sm:w-68 sm:h-68 lg:w-76 lg:h-76 flex items-center justify-center">
+                <img
+                  src="/assets/logo.png"
+                  alt="Yamini Lyrics Sacred Emblem"
+                  className="w-full h-full object-contain filter drop-shadow-[0_0_30px_rgba(245,158,11,0.65)] hover:drop-shadow-[0_0_45px_rgba(245,158,11,0.9)] hover:scale-105 transition-all duration-500 select-none"
+                />
+              </div>
 
-                  {/* Sacred Rotating Decorative Dots Ring */}
-                  <div className="absolute inset-0 rounded-full border border-dashed border-gold-radiant/40 animate-[spin_50s_linear_infinite] pointer-events-none" />
-                </div>
-
-                {/* Brand Identity & Sacred Call-To-Action */}
-                <div className="space-y-2 pt-1">
-                  <span className="text-[10px] sm:text-[11px] font-bold text-gold-radiant tracking-widest uppercase font-cinzel block px-3.5 py-1 rounded-full bg-gold-radiant/15 border border-gold-radiant/40 mx-auto w-fit shadow-gold-sm">
-                    {t('hero.featuredBadge')}
-                  </span>
-                  
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white font-cinzel tracking-wider">
-                    Yamini <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-radiant to-[#fef08a]">Lyrics</span>
-                  </h3>
-                  
-                  <p className="text-xs text-gold-champagne/85 font-sans max-w-xs leading-relaxed">
-                    {t('hero.featuredDesc')}
-                  </p>
-
-                  <div className="pt-2">
-                    <Link
-                      href="/#categories"
-                      className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-gradient-to-r from-gold-radiant via-[#fbbf24] to-gold-antique text-obsidian text-xs sm:text-sm font-extrabold hover:brightness-110 transition-all shadow-[0_0_25px_rgba(245,158,11,0.4)] hover:shadow-[0_0_35px_rgba(245,158,11,0.7)] hover:scale-105"
-                    >
-                      <Sparkles className="w-4 h-4 text-obsidian" />
-                      <span>{t('hero.featuredBtn')}</span>
-                    </Link>
-                  </div>
-                </div>
-
+              {/* Sacred Call-To-Action Button Directly Below Emblem */}
+              <div className="relative z-10 pt-4 flex flex-col items-center space-y-2 text-center">
+                <Link
+                  href="/#categories"
+                  className="inline-flex items-center gap-2 px-7 py-2.5 rounded-full bg-gradient-to-r from-gold-radiant via-[#fbbf24] to-gold-antique text-obsidian text-xs sm:text-sm font-extrabold hover:brightness-110 transition-all shadow-[0_0_20px_rgba(245,158,11,0.4)] hover:shadow-[0_0_30px_rgba(245,158,11,0.7)] hover:scale-105"
+                >
+                  <Sparkles className="w-4 h-4 text-obsidian" />
+                  <span>{t('hero.featuredBtn')}</span>
+                </Link>
+                <span className="text-[11px] text-gold-champagne/70 font-sans tracking-wide">
+                  {categories.length} Holy Deities • Sacred A4 Temple PDFs
+                </span>
               </div>
 
             </div>
