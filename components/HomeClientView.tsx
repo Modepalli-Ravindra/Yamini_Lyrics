@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Category, Song } from '@/lib/types';
 import DeityCard from './DeityCard';
 import HomeSearch from './HomeSearch';
-import { BookOpen, FileDown, ArrowRight, Eye, Sparkles, Scroll, Flame } from 'lucide-react';
+import { BookOpen, FileDown, ArrowRight, Eye, Sparkles } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
 interface HomeClientViewProps {
@@ -47,8 +47,8 @@ export default function HomeClientView({ categories, songs }: HomeClientViewProp
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-14 items-center">
             
-            {/* Left Column: Regal Typography, Value Badges & Search */}
-            <div className="lg:col-span-7 text-left space-y-4 sm:space-y-6">
+            {/* Left Column: Regal Typography & Search */}
+            <div className="lg:col-span-7 text-left space-y-5 sm:space-y-6">
 
               {/* Regal Heading - Cinematic Hierarchy */}
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15] font-cinzel">
@@ -63,43 +63,11 @@ export default function HomeClientView({ categories, songs }: HomeClientViewProp
                 {t('hero.subtitle')}
               </p>
 
-              {/* Sacred Quick Highlights Strip */}
-              <div className="flex flex-wrap items-center gap-2 sm:gap-3 pt-1 text-xs">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-obsidian-secondary/90 border border-gold-antique/40 text-gold-champagne text-[11px] sm:text-xs font-medium backdrop-blur-md shadow-sm">
-                  <Flame className="w-3.5 h-3.5 text-gold-radiant" />
-                  <span>{categories.length} Holy Deities</span>
-                </span>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-obsidian-secondary/90 border border-gold-antique/40 text-gold-champagne text-[11px] sm:text-xs font-medium backdrop-blur-md shadow-sm">
-                  <Scroll className="w-3.5 h-3.5 text-gold-radiant" />
-                  <span>Telugu & Roman Chanting</span>
-                </span>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-obsidian-secondary/90 border border-gold-antique/40 text-gold-champagne text-[11px] sm:text-xs font-medium backdrop-blur-md shadow-sm">
-                  <FileDown className="w-3.5 h-3.5 text-gold-radiant" />
-                  <span>1-Click Sacred A4 PDFs</span>
-                </span>
-              </div>
-
               {/* Live Instant Search Bar */}
-              <div className="pt-2">
+              <div className="pt-2 sm:pt-4">
                 <div className="p-1 sm:p-1.5 rounded-2xl bg-gradient-to-r from-gold-radiant/30 via-gold-antique/20 to-gold-radiant/10 border border-gold-radiant/50 shadow-[0_0_30px_rgba(245,158,11,0.22)] backdrop-blur-md">
                   <HomeSearch initialSongs={songs} />
                 </div>
-              </div>
-
-              {/* Quick Deity Filter Pills - Clean Flex Wrap (NO SLIDING, NO SCROLLBAR) */}
-              <div className="pt-2 flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs">
-                <span className="text-gold-champagne/80 font-semibold uppercase tracking-wider shrink-0 text-[11px] mr-1">
-                  {t('hero.popular')}
-                </span>
-                {categories.slice(0, 6).map((c) => (
-                  <Link
-                    key={c.id}
-                    href={`/category/${c.slug}`}
-                    className="px-2.5 sm:px-3 py-1 rounded-full bg-obsidian-secondary/90 border border-obsidian-border hover:border-gold-radiant/70 hover:text-white transition-all duration-200 text-[11px] sm:text-xs font-medium text-gold-champagne hover:shadow-gold-sm"
-                  >
-                    <span>{language === 'te' ? (c.name_telugu || c.name_english) : c.name_english}</span>
-                  </Link>
-                ))}
               </div>
             </div>
 
